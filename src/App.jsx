@@ -11,13 +11,13 @@ import Review from "./Score_&_Review/Review";
 function App() {
   return (
     <>
-      {/* <Landing_page /> */}
+      <Landing_page />
       {/* <Rules_Regulations /> */}
       {/* <Multiple_Choice_Question /> */}
       {/* <True_and_False /> */}
       {/* <Fill_in_the_blanks /> */}
       {/* <Score_board /> */}
-      <Review />
+      {/* <Review /> */}
     </>
   );
 }
