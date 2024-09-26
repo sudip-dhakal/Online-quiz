@@ -7,6 +7,7 @@ import True_and_False from "./Rules_&_Questions/True_and_False";
 import Fill_in_the_blanks from "./Rules_&_Questions/Fill_in_the_blanks";
 import Score_board from "./Score_&_Review/Score_board";
 import Review from "./Score_&_Review/Review";
+import Register from "./Login_&_Register/Register";
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
       <Fill_in_the_blanks />
       <Score_board />
       <Review /> */}
+      {/* <Register /> */}
     </>
   );
 }

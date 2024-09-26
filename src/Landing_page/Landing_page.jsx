@@ -3,11 +3,14 @@ import logo from "../assets/logo.png";
 import question from "../assets/Qmark.png";
 import Button from "../Components/Button";
 import Login from "../Login_&_Register/Login";
+import Register from "../Login_&_Register/Register";
 
 const Landing_page = () => {
   const [showLogin, setShowLogin] = useState(false);
+  const [showRegister, setShowRegister] = useState(false);
 
   const closeLogin = () => setShowLogin(false);
+  const closeRegister = () => setShowRegister(false);
 
   return (
     <>
@@ -21,7 +24,12 @@ const Landing_page = () => {
             >
               Login
             </li>
-            <li className="cursor-pointer underline">Register</li>
+            <li
+              className="cursor-pointer underline"
+              onClick={() => setShowRegister(true)}
+            >
+              Register
+            </li>
           </ul>
         </div>
 
@@ -46,7 +54,16 @@ const Landing_page = () => {
           />
         </div>
       </div>
-      <div>{showLogin && <Login closeLogin={closeLogin} />}</div>
+      <div>
+        {showLogin && (
+          <Login closeLogin={closeLogin} setShowRegister={setShowRegister} />
+        )}
+      </div>
+      <div>
+        {showRegister && (
+          <Register closeRegister={closeRegister} setShowLogin={setShowLogin} />
+        )}
+      </div>
     </>
   );
 };
