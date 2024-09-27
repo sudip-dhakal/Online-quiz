@@ -11,14 +11,7 @@ import Register from "./Login_&_Register/Register";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 function App() {
-  const [quizData, setQuizData] = useState([]);
   const [userData, setUserData] = useState([]);
-
-  let getData = () => {
-    axios.get("https://the-trivia-api.com/v2/questions").then((res) => {
-      setQuizData(res.data);
-    });
-  };
 
   let getUserData = () => {
     axios
@@ -29,7 +22,6 @@ function App() {
   };
 
   useEffect(() => {
-    getData();
     getUserData();
   }, []);
 

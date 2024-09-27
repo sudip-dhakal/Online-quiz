@@ -2,7 +2,7 @@ import React from "react";
 import logo from "../assets/logo.png";
 import Button from "./Button";
 
-const Questions = ({ answerList = [], questionType }) => {
+const Questions = ({ answerList = [], questionType, question }) => {
   return (
     <React.Fragment>
       <div className=" bg-custom-clr min-h-screen">
@@ -13,11 +13,9 @@ const Questions = ({ answerList = [], questionType }) => {
           <h1 className="text-7xl font-bold ">50</h1>
         </div>
 
-        <div className="bg-custom-cl-btn w-[50%] drop-shadow-custom-shadow ml-auto mr-auto mt-[6rem] rounded-[20px] pr-10 pt-5 pb-5">
+        <div className="bg-custom-cl-btn w-[50%] drop-shadow-custom-shadow ml-auto mr-auto mt-[6rem] rounded-[20px] pr-10 pt-2 pb-5 pl-2">
           <h4 className="font-bold text-sm text-right">Question x/y</h4>
-          <h1 className="text-center text-3xl font-bold ">
-            This is a Quiz Question
-          </h1>
+          <h1 className="text-center text-3xl font-bold ">{question}</h1>
 
           {questionType == "multipleChoice" ? (
             answerList.map((answers, index) => (
