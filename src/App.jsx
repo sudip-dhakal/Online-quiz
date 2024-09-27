@@ -8,7 +8,7 @@ import Fill_in_the_blanks from "./Rules_&_Questions/Fill_in_the_blanks";
 import Score_board from "./Score_&_Review/Score_board";
 import Review from "./Score_&_Review/Review";
 import Register from "./Login_&_Register/Register";
-import Message from "./Components/Message";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 function App() {
   const [quizData, setQuizData] = useState([]);
@@ -35,7 +35,18 @@ function App() {
 
   return (
     <>
-      <Landing_page userData={userData} setUserData={setUserData} />
+      <BrowserRouter>
+        <Routes>
+          <Route
+            path="/"
+            element={
+              <Landing_page userData={userData} setUserData={setUserData} />
+            }
+          />
+
+          <Route path="/home" element={<Rules_Regulations />} />
+        </Routes>
+      </BrowserRouter>
     </>
   );
 }

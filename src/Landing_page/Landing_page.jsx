@@ -12,8 +12,6 @@ const Landing_page = ({ userData, setUserData }) => {
   const closeLogin = () => setShowLogin(false);
   const closeRegister = () => setShowRegister(false);
 
-
-
   return (
     <>
       <div className="bg-custom-clr min-h-screen fixed top-0 bottom-0 left-0 right-0">
@@ -68,7 +66,12 @@ const Landing_page = ({ userData, setUserData }) => {
       </div>
       <div>
         {showRegister && (
-          <Register closeRegister={closeRegister} setShowLogin={setShowLogin} />
+          <Register
+            closeRegister={closeRegister}
+            setShowLogin={setShowLogin}
+            userData={userData}
+            setUserData={setUserData}
+          />
         )}
       </div>
     </>
