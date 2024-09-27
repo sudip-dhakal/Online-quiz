@@ -45,6 +45,7 @@ function App() {
           />
 
           <Route path="/home" element={<Rules_Regulations />} />
+          <Route path="/questions" element={<Multiple_Choice_Question />} />
         </Routes>
       </BrowserRouter>
     </>
