@@ -5,12 +5,14 @@ import Button from "../Components/Button";
 import Login from "../Login_&_Register/Login";
 import Register from "../Login_&_Register/Register";
 
-const Landing_page = () => {
+const Landing_page = ({ userData, setUserData }) => {
   const [showLogin, setShowLogin] = useState(false);
   const [showRegister, setShowRegister] = useState(false);
 
   const closeLogin = () => setShowLogin(false);
   const closeRegister = () => setShowRegister(false);
+
+
 
   return (
     <>
@@ -56,7 +58,12 @@ const Landing_page = () => {
       </div>
       <div>
         {showLogin && (
-          <Login closeLogin={closeLogin} setShowRegister={setShowRegister} />
+          <Login
+            closeLogin={closeLogin}
+            setShowRegister={setShowRegister}
+            userData={userData}
+            setUserData={setUserData}
+          />
         )}
       </div>
       <div>
