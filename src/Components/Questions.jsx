@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import logo from "../assets/logo.png";
 import Button from "./Button";
+import { useNavigate } from "react-router-dom";
 
 const Questions = ({
   answerList = [],
@@ -11,10 +12,12 @@ const Questions = ({
   length,
   answer,
 }) => {
+  let Navigation = useNavigate();
   const [timeEnd, setTimeEnd] = useState(false);
   const [timeLeft, setTimeLeft] = useState(10);
   const [selectedAnswer, setSelectedAnswer] = useState(null);
   const [count, setCount] = useState(0);
+  const [status, setStatus] = useState(false);
 
   useEffect(() => {
     if (timeLeft === 0) {
@@ -30,13 +33,12 @@ const Questions = ({
 
   let handleSubmit = () => {
     if (selectedAnswer == answer) {
-      setCount(count + 1);
+      setCount((prev) => prev + 1);
     } else console.log("Count could not be updated ");
 
     setTimeLeft(10);
     setSelectedAnswer(null);
     nextQuestion();
-    console.log("The answer is ", answer + "but you clicked ", selectedAnswer);
   };
 
   useEffect(() => {
@@ -46,7 +48,27 @@ const Questions = ({
       setTimeEnd(false);
       setSelectedAnswer(null);
     }
+  }, []);
+
+  useEffect(() => {
+    if (current + 1 > length) {
+      console.log("Navigation to score with the score value : ", count);
+      console.log("The length of the question is : ", length);
+      Navigation("/score", {
+        state: {
+          count: count,
+          length: length,
+          selectedAnswer: selectedAnswer,
+          correctAnswer: answer,
+          status: status,
+        },
+      });
+    }
   });
+
+  useEffect(() => {
+    console.log("Your score is ", count);
+  }, [count]);
 
   console.log(answer);
 
@@ -70,9 +92,9 @@ const Questions = ({
             answerList.map((answers, index) => (
               <div
                 key={index}
-                onClick={() => setSelectedAnswer(index)}
+                onClick={() => setSelectedAnswer(answers)}
                 className={`mt-6  h-[2.5rem] w-[70%] ml-auto mr-auto rounded-[10px] border-black border-2 mb-4 cursor-pointer ${
-                  selectedAnswer === index
+                  selectedAnswer === answers
                     ? " bg-green-900 text-white"
                     : "bg-custom-clr"
                 }   `}

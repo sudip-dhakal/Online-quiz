@@ -38,6 +38,9 @@ function App() {
 
           <Route path="/home" element={<Rules_Regulations />} />
           <Route path="/questions" element={<Multiple_Choice_Question />} />
+          <Route path="/fill" element={<Fill_in_the_blanks />} />
+          <Route path="/score" element={<Score_board />} />
+          <Route path="/review" element={<Review />} />
         </Routes>
       </BrowserRouter>
     </>
