@@ -13,6 +13,8 @@ const Multiple_Choice_Question = () => {
     });
   };
 
+  let length = quizData.length;
+
   useEffect(() => {
     getData();
   }, []);
@@ -31,12 +33,22 @@ const Multiple_Choice_Question = () => {
     ...currentQuestion.incorrectAnswers,
   ];
 
+  let handleNextQuestion = () => {
+    if (currentIndex < quizData.length - 1) {
+      setCurrentIndex((prev) => prev + 1);
+    }
+  };
+
   return (
     <>
       <Questions
         answerList={answerList}
         question={currentQuestion.question.text}
         questionType="multipleChoice"
+        nextQuestion={handleNextQuestion}
+        length={length}
+        current={currentIndex + 1}
+        answer={currentQuestion.correctAnswer}
       />
     </>
   );
