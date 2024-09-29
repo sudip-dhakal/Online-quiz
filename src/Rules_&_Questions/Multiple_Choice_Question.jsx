@@ -18,7 +18,11 @@ const Multiple_Choice_Question = () => {
   }, []);
 
   if (quizData.length === 0) {
-    return <div>Loading...</div>;
+    return (
+      <div>
+        <h1 className="font-bold italic text-5xl">Loading...</h1>
+      </div>
+    );
   }
 
   let currentQuestion = quizData[currentIndex];

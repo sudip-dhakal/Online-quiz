@@ -1,17 +1,18 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import logo from "../assets/logo.png";
 import Button from "./Button";
+import Timer from "./Timer";
 
 const Questions = ({ answerList = [], questionType, question }) => {
+  const [timeEnd, setTimeEnd] = useState(false);
+
   return (
     <React.Fragment>
       <div className=" bg-custom-clr min-h-screen">
         <div className="h-[15%] bg-custom-cl-btn drop-shadow-custom-shadow ">
           <img src={logo} alt="logo" className="w-[90px] h-auto ml-20" />
         </div>
-        <div className="bg-timer-bg w-[130px] h-[130px] rounded-full flex items-center justify-center absolute top-5 left-[45%]">
-          <h1 className="text-7xl font-bold ">50</h1>
-        </div>
+        <Timer setTimeEnd={setTimeEnd} />
 
         <div className="bg-custom-cl-btn w-[50%] drop-shadow-custom-shadow ml-auto mr-auto mt-[6rem] rounded-[20px] pr-10 pt-2 pb-5 pl-2">
           <h4 className="font-bold text-sm text-right">Question x/y</h4>
