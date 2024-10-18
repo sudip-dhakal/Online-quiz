@@ -42,12 +42,16 @@ const Register = ({ closeRegister, setShowLogin, userData, setUserData }) => {
     let userConfirmPassword = confirmPassword.trim();
 
     if (!email || !password || !confirmPassword) {
-      setMessage("Please fill all the fields");
+      setMessage("Please fill the required data");
       return false;
     }
     if (password !== confirmPassword) {
-      setMessage("Please confirm the password.");
+      setMessage("Confirm password must be same as password");
       return false;
+    }
+
+    if (password.length < 8) {
+      setMessage("Password length must be of 8 characters");
     }
     axios
       .post("https://66d581f5f5859a704266544c.mockapi.io/complainSys/admin", {
@@ -80,8 +84,10 @@ const Register = ({ closeRegister, setShowLogin, userData, setUserData }) => {
           <div className="flex flex-col gap-6 items-center justify-center  ">
             <h1 className="text-white text-3xl font-bold mt-6">Register</h1>
 
+            {message && <p className="text-yellow-400">{message}</p>}
+
             <input
-              type="text"
+              type="email"
               placeholder="Email address"
               className="h-[3rem] rounded-[10px] w-[80%]"
               value={email}
@@ -102,7 +108,6 @@ const Register = ({ closeRegister, setShowLogin, userData, setUserData }) => {
               onChange={handleConfirmPassword}
             />
 
-            {message && <p className="text-white">{message}</p>}
             <Button
               Class="bg-button-color w-[80%] rounded-[10px] text-white h-[3rem] text-2xl"
               name="Register"
