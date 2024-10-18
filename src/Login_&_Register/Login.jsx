@@ -31,8 +31,13 @@ const Login = ({ closeLogin, setShowRegister, userData, setUserData }) => {
     let user = username.trim();
     let pass = password.trim();
 
-    if (!user || !pass) {
-      setMessage("Please fill all the fields ");
+    if (!user) {
+      setMessage("Please fill username ");
+      return false;
+    }
+
+    if (!pass) {
+      setMessage("Please fill password ");
       return false;
     }
     console.log(message);
@@ -40,11 +45,8 @@ const Login = ({ closeLogin, setShowRegister, userData, setUserData }) => {
     userData.find(
       (element) => element.username === user && element.password === pass
     )
-      ? console.log("Login Successful")
-      : setMessage("Please enter the valid username password");
-
-    handleClear();
-    Navigation("/home");
+      ? Navigation("/home")
+      : setMessage("Username and password didn't match");
   };
 
   return (
@@ -62,6 +64,9 @@ const Login = ({ closeLogin, setShowRegister, userData, setUserData }) => {
         >
           <div className="flex flex-col gap-6 items-center justify-center ">
             <h1 className="text-white text-3xl font-bold mt-6">Login</h1>
+
+            {message && <p className="text-yellow-400">{message}</p>}
+
             <input
               type="text"
               value={username}
@@ -76,12 +81,12 @@ const Login = ({ closeLogin, setShowRegister, userData, setUserData }) => {
               className="h-[3rem] rounded-[10px] w-[80%]"
               onChange={passwordHandler}
             />
-            {message && <p className="text-white">{message}</p>}
             <Button
               Class="bg-button-color w-[80%] rounded-[10px] text-white h-[3rem] text-2xl"
               name="Login"
               onClick={handleLogin}
             />
+
             <p className="text-white">
               Don't have an account ?{" "}
               <span className="underline cursor-pointer" onClick={handleSwitch}>
