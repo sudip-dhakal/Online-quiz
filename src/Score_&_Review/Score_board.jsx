@@ -9,6 +9,11 @@ const Score_board = () => {
   const Navigation = useNavigate();
   const location = useLocation();
 
+  console.log(location);
+  console.log(location.state);
+  // console.log('The count state is : ',count)
+  // console.log('The length state is : ',length)
+  // console.log('The correct answer state is :',location.state)
   const count = location.state?.count || 0;
   const task_question = location.state?.length || 0;
 

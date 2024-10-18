@@ -18,6 +18,22 @@ const Questions = ({
   const [selectedAnswer, setSelectedAnswer] = useState(null);
   const [count, setCount] = useState(0);
   const [status, setStatus] = useState(false);
+  const [questions, setQuestions] = useState([]);
+
+  console.log(answer, selectedAnswer, status);
+  useEffect(() => {
+    if (current == 0) {
+      const initialQuestions = new Array(length)
+        .fill(null)
+        .map((item, index) => ({
+          question: `Question ${index + 1}`,
+          selectedAnswer: null,
+          correctAnswer: answer,
+          status: null,
+        }));
+      setQuestions(initialQuestions);
+    }
+  }, [length, current, answer]);
 
   useEffect(() => {
     if (timeLeft === 0) {
@@ -32,8 +48,9 @@ const Questions = ({
   }, [timeLeft]);
 
   let handleSubmit = () => {
-    if (selectedAnswer == answer) {
+    if (selectedAnswer === answer) {
       setCount((prev) => prev + 1);
+      setStatus(true);
     } else console.log("Count could not be updated ");
 
     setTimeLeft(10);
@@ -48,12 +65,10 @@ const Questions = ({
       setTimeEnd(false);
       setSelectedAnswer(null);
     }
-  }, []);
+  }, [timeEnd, nextQuestion]);
 
   useEffect(() => {
     if (current + 1 > length) {
-      console.log("Navigation to score with the score value : ", count);
-      console.log("The length of the question is : ", length);
       Navigation("/score", {
         state: {
           count: count,
