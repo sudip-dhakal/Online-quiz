@@ -3,8 +3,8 @@ import React from "react";
 const RulesField = ({ description }) => {
   return (
     <React.Fragment>
-      <div className="h-[3.5rem] bg-custom-cl-btn w-[80%] ml-auto mr-auto drop-shadow-custom-shadow rounded-[10px]">
-        <p className=" border-custom-cl-btn text-2xl flex items-center justify-center relative top-2">
+      <div className="md:h-[3.5rem] sm:h-[2.5rem] bg-custom-cl-btn w-[80%] ml-auto mr-auto drop-shadow-custom-shadow rounded-[10px]">
+        <p className=" border-custom-cl-btn md:text-2xl sm:text-[1rem] items-center justify-center relative top-2  text-wrap">
           {description}
         </p>
       </div>
