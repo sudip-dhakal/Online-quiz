@@ -101,7 +101,7 @@ const Questions = ({
           <h1 className="md:text-7xl sm:text-2xl font-bold ">{timeLeft}</h1>
         </div>
 
-        <div className="bg-custom-cl-btn w-[50%] drop-shadow-custom-shadow ml-auto mr-auto mt-[6rem] rounded-[20px] pr-10 pt-2 pb-5 pl-2">
+        <div className="bg-custom-cl-btn md:w-[50%] sm:w-[90%] drop-shadow-custom-shadow ml-auto mr-auto mt-[6rem] rounded-[20px] pr-10 pt-2 pb-5 pl-2">
           <h4 className="font-bold md:text-sm sm:text-[0.625rem] text-right">
             Question {current}/{length}
           </h4>
@@ -137,7 +137,7 @@ const Questions = ({
             className="ml-auto mr-auto w-auto bg-button-color text-center  rounded-[8px] h-[2rem] "
             onClick={handleSubmit}
           >
-            <Button Class="md:text-2xl sm:text-xl font-bold text-white" name="Submit" />
+            <Button Class="md:text-2xl sm:text-xl font-bold text-white w-auto" name="Submit" />
           </div>
         </div>
       </div>
