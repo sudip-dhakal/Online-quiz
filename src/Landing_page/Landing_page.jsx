@@ -15,7 +15,7 @@ const Landing_page = ({ userData, setUserData }) => {
   return (
     <>
       {/* Main container */}
-      <div className="bg-custom-clr min-h-screen fixed top-0 bottom-0 left-0 right-0">
+      <div className="bg-custom-clr min-h-screen fixed top-0 bottom-0 left-0 right-0 sm:text-black">
         {/* Header: Logo and Menu */}
         <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center px-4 py-4 md:px-8">
           <img src={logo} alt="logo" className="w-[65px] h-auto" />
