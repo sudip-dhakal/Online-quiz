@@ -14,10 +14,12 @@ const Landing_page = ({ userData, setUserData }) => {
 
   return (
     <>
+      {/* Main container */}
       <div className="bg-custom-clr min-h-screen fixed top-0 bottom-0 left-0 right-0">
-        <div className="flex items-center justify-between px-8 py-4 ">
+        {/* Header: Logo and Menu */}
+        <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center px-4 py-4 md:px-8">
           <img src={logo} alt="logo" className="w-[65px] h-auto" />
-          <ul className="flex space-x-20 font-semibold mr-20">
+          <ul className="flex space-x-6 sm:space-x-12 mt-4 sm:mt-0 font-semibold">
             <li
               className="cursor-pointer underline"
               onClick={() => setShowLogin(true)}
@@ -33,27 +35,39 @@ const Landing_page = ({ userData, setUserData }) => {
           </ul>
         </div>
 
-        <div className="flex justify-between ml-20 h-fit">
-          <div className="w-[60%] mt-10 h-[60%]">
-            <h1 className="text-[60px] font-bold ">IMPROVE YOUR</h1>
-            <h1 className="text-[60px] font-bold ml-6">KNOWLEDGE</h1>
-            <p className="text-[30px] mt-4">
-              Challenge your knowledge with fun.<br></br> Test your skills and
-              learn something <br></br>new everyday
+        {/* Main Content */}
+        <div className="flex flex-col md:flex-row justify-between items-center ml-4 md:ml-20">
+          {/* Text Section */}
+          <div className="w-full md:w-[60%] mt-6 md:mt-10">
+            <h1 className="text-4xl md:text-[60px] font-bold">
+              IMPROVE YOUR
+            </h1><br/>
+            <h1 className="text-4xl md:text-[60px] font-bold ml-2 md:ml-6">
+              KNOWLEDGE
+            </h1>
+            <p className="text-lg md:text-[30px] mt-4">
+              Challenge your knowledge with fun.<br />
+              Test your skills and learn something<br />
+              new every day.
             </p>
           </div>
-          <div>
-            <img src={question} alt="question mark" />
+
+          {/* Image Section */}
+          <div className="w-[50%] md:w-[30%] mt-4 md:mt-0">
+            <img src={question} alt="question mark" className="w-full h-auto" />
           </div>
         </div>
-        <div>
+
+        {/* Start Quiz Button */}
+        <div className="ml-4 md:ml-20 mt-6">
           <Button
-            Class="ml-20 bg-custom-cl-btn p-2 w-[200px] h-[50px] rounded-[20px] relative -top-20 border-black border-2 text-xl text-center
-"
-            name="Start  Quiz"
+            Class="bg-custom-cl-btn p-2 w-full md:w-[200px] h-[50px] rounded-[20px] border-black border-2 text-xl text-center"
+            name="Start Quiz"
           />
         </div>
       </div>
+
+      {/* Login Modal */}
       <div>
         {showLogin && (
           <Login
@@ -64,6 +78,8 @@ const Landing_page = ({ userData, setUserData }) => {
           />
         )}
       </div>
+
+      {/* Register Modal */}
       <div>
         {showRegister && (
           <Register
