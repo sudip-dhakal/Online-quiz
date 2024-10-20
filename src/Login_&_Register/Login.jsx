@@ -63,7 +63,9 @@ const Login = ({ closeLogin, setShowRegister, userData, setUserData }) => {
     "
         >
           <div className="flex flex-col gap-6 items-center justify-center ">
-            <h1 className="text-white text-3xl font-bold mt-6">Login</h1>
+            <h1 className="text-white md:text-3xl font-bold mt-6 sm:text-xl ">
+              Login
+            </h1>
 
             {message && <p className="text-yellow-400">{message}</p>}
 
@@ -71,28 +73,31 @@ const Login = ({ closeLogin, setShowRegister, userData, setUserData }) => {
               type="text"
               value={username}
               placeholder="Email address"
-              className="h-[3rem] rounded-[10px] w-[80%]"
+              className="md:h-[3rem] rounded-[10px] w-[80%] sm:h-[1.5rem]"
               onChange={userHandler}
             />
             <input
               type="password"
               value={password}
               placeholder="Password"
-              className="h-[3rem] rounded-[10px] w-[80%]"
+              className="md:h-[3rem] rounded-[10px] w-[80%] sm:h-[1.5rem]"
               onChange={passwordHandler}
             />
             <Button
-              Class="bg-button-color w-[80%] rounded-[10px] text-white h-[3rem] text-2xl"
+              Class="bg-button-color w-[80%] rounded-[10px] text-white md:h-[3rem] text-2xl sm:h-[2rem] sm:text-[1rem]  "
               name="Login"
               onClick={handleLogin}
             />
 
-            <p className="text-white">
-              Don't have an account ?{" "}
-              <span className="underline cursor-pointer" onClick={handleSwitch}>
+            <div>
+              <p className="text-white md:block sm:hidden">Don't have an account ? </p>
+              <p
+                className="underline cursor-pointer text-white text-center"
+                onClick={handleSwitch}
+              >
                 Register
-              </span>
-            </p>
+              </p>
+            </div>
           </div>
         </div>
       </div>

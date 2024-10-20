@@ -3,6 +3,9 @@ export default {
   content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
   theme: {
     extend: {
+      screens: {
+        'sm':'320px',
+      },
       colors: {
         "custom-clr": "#F6DFDF",
         "custom-cl-btn": "#D9D9D9",
