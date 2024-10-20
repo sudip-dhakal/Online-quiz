@@ -89,7 +89,7 @@ const Login = ({ closeLogin, setShowRegister, userData, setUserData }) => {
               onClick={handleLogin}
             />
 
-            <div>
+            <div className="flex">
               <p className="text-white md:block sm:hidden">Don't have an account ? </p>
               <p
                 className="underline cursor-pointer text-white text-center"

@@ -69,7 +69,7 @@ const Register = ({ closeRegister, setShowLogin, userData, setUserData }) => {
 
   return (
     <>
-      <div className="bg-black backdrop-blur-sm fixed inset-0 flex justify-center items-center bg-opacity-30">
+      <div className="bg-black backdrop-blur-sm fixed inset-0 flex justify-center items-center bg-opacity-30 text-center">
         <span
           className="relative bottom-[10rem] left-[25rem] text-white mr-4 mt-2 cursor-pointer"
           onClick={closeRegister}
@@ -82,43 +82,50 @@ const Register = ({ closeRegister, setShowLogin, userData, setUserData }) => {
         >
           <div className="float-right text-white mr-4 mt-2 cursor-pointer"></div>
           <div className="flex flex-col gap-6 items-center justify-center  ">
-            <h1 className="text-white text-3xl font-bold mt-6">Register</h1>
+            <h1 className="text-white md:text-3xl font-bold mt-6 sm:text-xl ">
+              Register
+            </h1>
 
             {message && <p className="text-yellow-400">{message}</p>}
 
             <input
               type="email"
               placeholder="Email address"
-              className="h-[3rem] rounded-[10px] w-[80%]"
+              className="md:h-[3rem] rounded-[10px] w-[80%] sm:h-[1.5rem]"
               value={email}
               onChange={handleEmail}
             />
             <input
               type="password"
               placeholder="Password"
-              className="h-[3rem] rounded-[10px] w-[80%]"
+              className="md:h-[3rem] rounded-[10px] w-[80%] sm:h-[1.5rem]"
               value={password}
               onChange={handlePassword}
             />
             <input
               type="password"
               placeholder=" Confirm Password"
-              className="h-[3rem] rounded-[10px] w-[80%]"
+              className="md:h-[3rem] rounded-[10px] w-[80%] sm:h-[1.5rem]"
               value={confirmPassword}
               onChange={handleConfirmPassword}
             />
 
             <Button
-              Class="bg-button-color w-[80%] rounded-[10px] text-white h-[3rem] text-2xl"
+              Class="bg-button-color w-[80%] rounded-[10px] text-white md:h-[3rem] sm:h-[2rem] sm:text-xl md:text-2xl"
               name="Register"
               onClick={handleRegister}
             />
-            <p className="text-white">
-              {confirm ? confirm : " Already have an account ?"}
-              <span className="underline cursor-pointer" onClick={handleSwitch}>
+            <div className="flex ">
+              <p className="text-white md:block sm:hidden">
+                {confirm ? confirm : " Already have an account ?"}
+              </p>
+              <p
+                className="underline cursor-pointer text-center text-white"
+                onClick={handleSwitch}
+              >
                 Login
-              </span>
-            </p>
+              </p>
+            </div>
           </div>
         </div>
       </div>
