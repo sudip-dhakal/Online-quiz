@@ -77,7 +77,7 @@ const Register = ({ closeRegister, setShowLogin, userData, setUserData }) => {
           <X size={30} color="white" />
         </span>
         <div
-          className=" bg-login-background w-[30%] max-h-[80%] rounded-[15px] p-2 
+          className=" bg-login-background md:w-[30%] sm:w-[80%] max-h-[80%] rounded-[15px] p-2 
     "
         >
           <div className="float-right text-white mr-4 mt-2 cursor-pointer"></div>

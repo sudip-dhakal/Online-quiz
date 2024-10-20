@@ -59,7 +59,7 @@ const Login = ({ closeLogin, setShowRegister, userData, setUserData }) => {
           <X size={30} color="white" />
         </span>
         <div
-          className=" bg-login-background w-[30%] max-h-[65%] rounded-[15px]   pb-2
+          className=" bg-login-background md:w-[30%] sm:w-[80%] max-h-[65%] rounded-[15px]   pb-2
     "
         >
           <div className="flex flex-col gap-6 items-center justify-center ">
