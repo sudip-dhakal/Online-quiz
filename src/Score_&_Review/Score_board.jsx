@@ -33,8 +33,8 @@ const Score_board = () => {
           </h1>
         </div>
 
-        <div className="bg-white rounded-[15px] z-10 w-[90%] md:w-[60%] lg:w-[50%] flex flex-col md:flex-row justify-between p-[2rem] mt-[1rem] drop-shadow-custom-shadow">
-          <div className="flex flex-col gap-8 md:gap-20">
+        <div className="bg-white rounded-[15px] z-10 w-[90%] md:w-[60%] lg:w-[50%] flex flex-col md:flex-row justify-between p-[2rem] mt-[1rem] drop-shadow-custom-shadow items-center">
+          <div className="flex flex-col gap-8 md:gap-20 items-center">
             <Score calculation="100%" topic="Completion" />
             <Score calculation={count} topic="Correct" />
           </div>
@@ -44,8 +44,7 @@ const Score_board = () => {
             <div className="font-bold text-3xl md:text-6xl">{count}</div>
           </div>
 
-     
-          <div className="flex flex-col gap-8 md:gap-20">
+          <div className="flex flex-col gap-8 md:gap-20 items-center">
             <Score calculation={task_question} topic="Task Questions" />
             <Score calculation={task_question - count} topic="Wrong" />
           </div>
