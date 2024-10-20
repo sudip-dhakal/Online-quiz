@@ -14,7 +14,6 @@ const Landing_page = ({ userData, setUserData }) => {
 
   return (
     <>
-      {/* Main container */}
       <div className="bg-custom-clr min-h-screen fixed top-0 bottom-0 left-0 right-0 sm:text-black">
         {/* Header: Logo and Menu */}
         <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center px-4 py-4 md:px-8">
@@ -35,7 +34,6 @@ const Landing_page = ({ userData, setUserData }) => {
           </ul>
         </div>
 
-        {/* Main Content */}
         <div className="flex flex-col md:flex-row justify-between items-center ml-4 md:ml-20">
           {/* Text Section */}
           <div className="w-full md:w-[60%] mt-6 md:mt-10">
@@ -52,13 +50,11 @@ const Landing_page = ({ userData, setUserData }) => {
             </p>
           </div>
 
-          {/* Image Section */}
           <div className="w-[50%] md:w-[30%] mt-4 md:mt-0">
             <img src={question} alt="question mark" className="w-full h-auto" />
           </div>
         </div>
 
-        {/* Start Quiz Button */}
         <div className="ml-4 md:ml-20 mt-6">
           <Button
             Class="bg-custom-cl-btn p-2 w-full md:w-[200px] h-[50px] rounded-[20px] border-black border-2 text-xl text-center"
@@ -67,7 +63,7 @@ const Landing_page = ({ userData, setUserData }) => {
         </div>
       </div>
 
-      {/* Login Modal */}
+
       <div>
         {showLogin && (
           <Login
@@ -79,7 +75,7 @@ const Landing_page = ({ userData, setUserData }) => {
         )}
       </div>
 
-      {/* Register Modal */}
+
       <div>
         {showRegister && (
           <Register
