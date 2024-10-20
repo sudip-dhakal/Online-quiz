@@ -134,7 +134,7 @@ const Questions = ({
           ) : null}
 
           <div
-            className="ml-auto mr-auto w-[40%] bg-button-color text-center  rounded-[8px] h-[2rem] "
+            className="ml-auto mr-auto w-auto bg-button-color text-center  rounded-[8px] h-[2rem] "
             onClick={handleSubmit}
           >
             <Button Class="md:text-2xl sm:text-xl font-bold text-white" name="Submit" />
